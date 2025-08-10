@@ -14,7 +14,7 @@ This project is a full-stack web application that allows users to fetch case inf
 
 **Court Chosen:** [Delhi High Court](https://delhihighcourt.nic.in/app/)
 
-[![Watch the video](https://img.youtube.com/vi/_J1DBgwNkL8/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+[![Watch the video](https://img.youtube.com/vi/_J1DBgwNkL8/maxresdefault.jpg)](https://www.youtube.com/watch?v=_J1DBgwNkL8)
 
 ### Core Functionality
 
