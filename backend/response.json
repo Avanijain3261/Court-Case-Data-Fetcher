@@ -1,0 +1,39 @@
+{
+  "draw": 2,
+  "recordsTotal": 1,
+  "recordsFiltered": 1,
+  "data": [
+    {
+      "pno": "",
+      "ctype": "<a>W.P.(C)</a> - 5595 / 2021 <br><font color='green'>[PENDING]</font><br> <a href=https://delhihighcourt.nic.in/app/case-type-status-details/eyJpdiI6ImZ2VzNxWVBJMXdQengwL1VtdjJtQ2c9PSIsInZhbHVlIjoiQW1pVGhvaXlrdXpFRE1SL21wNHo3UT09IiwibWFjIjoiNGMyNGNjZTJhYTU5ODllNmZlNjhjYzc4ODk4OTY2MzI3OWVhYzkzZjMwYjc4OTNiYjlkNjIxN2JkMzZiZTQ4NiIsInRhZyI6IiJ9/eyJpdiI6IjdQeWptV0lkcW9iZWQ3T2FpeVhDNnc9PSIsInZhbHVlIjoia1ZEdm0xTHVHMlBkMkRhQUYzVE5jQT09IiwibWFjIjoiMjcxMGExZjQwMGFmZTE4MTQ4NGYyMzY1N2NlYzdkMWU5ZjlmMjcyM2JhMDY5NTk5OGE1ZjM3MWE4ODVmYzk1OCIsInRhZyI6IiJ9/eyJpdiI6ImZVVlo0WHVpU1hGVEkrbWNIdFNKYUE9PSIsInZhbHVlIjoidk1adzNPblN1TVY2cHhaYlpRbTRYZz09IiwibWFjIjoiNTY0YWU1NmI4ZmMwMDYwNGM4ZTJhMTA1ZDFhMDNmMjcxM2YzZTFlMDBlZTE4NmNmYTA5Y2QxNjMzNDAyYWU4NCIsInRhZyI6IiJ9 ' style='color:blue; text-decoration: underline;'><strong>Orders</strong></a>",
+      "cno": "5595",
+      "cyear": 2021,
+      "pet": "RM3D MINING AND LOGISTICS PVT LTD <br>VS.&nbsp;&nbsp; <br> COAL INDIA LIMITED  & ORS.<br>\r\n\t\t\t\t",
+      "res": "COAL INDIA LIMITED  &amp; ORS.",
+      "pet_adv": "SHWETA BHARTI",
+      "res_adv": "",
+      "h_d_dt": null,
+      "status": "P ",
+      "old_h_dt": "07/08/2025",
+      "catcode": "4400",
+      "courtno": "261",
+      "diary_no": "385595",
+      "diary_yr": 2021,
+      "orderdate": "NEXT DATE: NA\r\n\t\t\t   \t<br>Last Date: 07/08/2025\r\n\t\t\t   \t<br>COURT NO:261",
+      "DT_RowIndex": 1
+    }
+  ],
+  "input": {
+    "draw": "2",
+    "start": "0",
+    "length": "50",
+    "search": {
+      "value": null,
+      "regex": "false"
+    },
+    "case_type": "W.P.(C)",
+    "case_number": "5595",
+    "case_year": "2021",
+    "_": "1754593309882"
+  }
+}
