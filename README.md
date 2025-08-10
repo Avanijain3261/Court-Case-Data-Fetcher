@@ -14,6 +14,8 @@ This project is a full-stack web application that allows users to fetch case inf
 
 **Court Chosen:** [Delhi High Court](https://delhihighcourt.nic.in/app/)
 
+[![Watch the video](https://img.youtube.com/vi/_J1DBgwNkL8/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+
 ### Core Functionality
 
 1. A user enters a **Case Type**, **Case Number**, and **Filing Year** into a simple web form.
