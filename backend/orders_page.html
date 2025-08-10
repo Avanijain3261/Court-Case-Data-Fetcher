@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="https://delhihighcourt.nic.in/app/public/ois/images/logo.png" type="image/png" />
+	<title>High Court of Delhi</title>
+	<link href="https://delhihighcourt.nic.in/app/public/ois/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="https://delhihighcourt.nic.in/app/public/ois/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="https://delhihighcourt.nic.in/app/public/ois/css/material.css" rel="stylesheet" />
+	<link href="https://delhihighcourt.nic.in/app/public/ois/css/glyphicons.css" rel="stylesheet" />
+	<link href="https://delhihighcourt.nic.in/app/public/ois/css/owl.carousel.min.css" rel="stylesheet" />
+	<link href="https://delhihighcourt.nic.in/app/public/ois/css/owl.theme.default.css" rel="stylesheet">
+	<link href="https://delhihighcourt.nic.in/app/public/ois/css/animate.css" rel="stylesheet">
+	<link href="https://delhihighcourt.nic.in/app/public/ois/css/style.css" rel="stylesheet" />
+
+    <link href="https://delhihighcourt.nic.in/app/public/backend/css/sweetalert2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://delhihighcourt.nic.in/app/public/ois/css/jquery-ui.css">
+    <link href="https://delhihighcourt.nic.in/app/public/ois/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-----------------------------DataTable CSS---------------------->
+    <link rel="stylesheet" type="text/css" href="https://delhihighcourt.nic.in/app/public/ois/css/dataTables.dataTables.css"/>
+    <link rel="stylesheet" type="text/css" href="https://delhihighcourt.nic.in/app/public/ois/css/buttons.dataTables.css"/>
+    <!-----------------------------DataTable CSS---------------------->
+
+    <style>
+        .bootom-quick-links-area .inner-title h4 {
+            font-size: 18px;
+            margin: 0;
+            font-family: "open_sansbold";
+            color: #314e9a;
+        }
+
+        .bootom-quick-links-area .inner-title h4:before {
+            top: 35%;
+            display: none;
+        }
+
+        .quick-ticker ul {
+            list-style: none;
+            padding: 0;
+            color: #fff;
+            margin-top: 15px !important;
+            display: flex;
+            gap: 30px;
+            margin-bottom: 0;
+        }
+
+        .quick-ticker li p {
+            margin: 0;
+            color: #000;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .quick-ticker li:before {
+            transition: all 450ms ease 0s;
+            -webkit-transition: all 450ms ease 0s;
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            height: 2px;
+            width: 0%;
+            background: #3857a1;
+        }
+
+        .quick-ticker li:hover:before {
+            transition: all 450ms ease 0s;
+            -webkit-transition: all 450ms ease 0s;
+            width: 100%;
+        }
+
+        .quick-ticker li p:before {
+            content: "\f0da";
+            position: absolute;
+            top: 3px;
+            left: 0;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: "Font Awesome 5 Free";
+        }
+
+        .quick-ticker li {
+            position: relative;
+        }
+
+        .quick-ticker li:hover a {
+            color: #37599f;
+        }
+
+        .bootom-quick-links-area {
+            margin-top: 5px;
+        }
+        .custom-swal-popup {
+            width: 300px !important;
+            height: auto !important;
+         }
+
+        .whole-page-overlay {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            height: 100% !important;
+            z-index: 9999;
+            display: none;
+        }
+
+        .whole-page-overlay .center-loader {
+            top: 50%;
+            left: 48%;
+            position: absolute;
+            color: white;
+        }
+
+    </style>
+
+
+
+
+
+</head>
+
+<body class="">
+<div class="whole-page-overlay" id="whole_page_loader">
+        <img class="center-loader" style="height:100px; color: #fff;" src="https://delhihighcourt.nic.in/app/public/spin.gif" />
+    </div>
+    <header>
+		<!-- Top Header Section End -->
+		<div class="top-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-4 col-lg-4 top-left-nav wow fadeInDown">
+						<ul>
+						  
+							<li><a href="https://delhihighcourt.nic.in/web/sitemap">Sitemap</a></li>
+							<li><a href="https://delhihighcourt.nic.in/web/contact-us">Contact</a></li>
+							<li><a href="https://delhihighcourt.nic.in/web/form/feedback">Feedback</a></li>
+							<li><a href="https://delhihighcourt.nic.in/web/faqs">FAQs</a></li>
+						</ul>
+					</div>
+					<div class="col-12 col-sm-12 col-md-8 col-lg-8 top-right-nav wow fadeInDown">
+						<ul>
+							<li><a href="#" class="hide skiptomain">Skip to Main Content</a></li>
+							<li><a class="hide" href="https://delhihighcourt.nic.in/web/screen-reader-access">Screen Reader Access</a></li>
+							<li class="text-size">
+								<a href="#">A+</a>
+								<a href="#">A</a>
+								<a href="#">A -</a>
+							</li>
+							<li class="text-size">
+								<a href="#" class="whitebg">A</a>
+								<a href="#" class="blackbg">A</a>
+							</li>
+							<li class="lang-select">
+							Hindi
+								<select class="form-control custom-lang-select">
+									<!--<option>English</option>-->
+									<option>Hindi</option>
+								</select>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Top Header Section End -->
+		<!-- Logo Section Header Start -->
+		<div class="logo-sec-wraper">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-6 col-lg-4 logo-sec wow fadeInUp">
+						<a class="logo-align" href="https://delhihighcourt.nic.in/web">
+							<div class="brand-img">
+								<img src="https://delhihighcourt.nic.in/app/public/ois/images/logo.png" alt="emblem">
+							</div>
+							<div class="brand-text">
+								<h4>High Court of Delhi</h4>
+							</div>
+						</a>
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-8 main-menu-area wow fadeInUp">
+						<div class="nav-wraper">
+							<nav class="navbar navbar-expand-sm navbar-light custom-nav w-100 wow fadeInUp">
+								<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapsibleNavbar">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse" id="collapsibleNavbar">
+									<ul class="navbar-nav mr-auto">
+										<li class="nav-item">
+											<a href="https://delhihighcourt.nic.in/web">Home</a>
+										</li>
+										<li class="nav-item menuparent">
+											<a href="javascript:void(0)">Judges</a>
+											<ul class="sub-menu">
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/CJ_Sitting_Judges">Hon'ble Chief Justice & Sitting Judges</a>
+
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/Honble-Judges-Appointed-as-the-Chief-Justices-of-India">Hon'ble Judges appointed as the Chief
+														Justice of India</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/Honble-Judges-Appointed-as-Judges-of-the-Supreme-Court-of-India">Hon'ble Judges appointed as Judge of
+														the Supreme Court of India</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/Former-Honble-Chief-Justices">Former Hon'ble Chief Justices</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/Former-Honble-Judges-Elevated-as-Chief-Justice-of-Other-High-Courts">Former Hon'ble Judges elevated as Chief
+														Justice of Other High Courts</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/former_judges">Former Hon'ble Judges</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/assets">Assets of Judges</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item menuparent">
+											<a href="javascript:void(0)">Administration</a>
+											<ul class="sub-menu">
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/committee">Hon'ble Committees</a>
+												</li>
+												<li class="item-list menuparent">
+													<a href="javascript:void(0)">Registrar</a>
+													<ul class="sub-menu">
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/sitting-registrars">Sitting Registrar</a>
+														</li>
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/former-registrars">Former Registrar</a>
+														</li>
+													</ul>
+												</li>
+												<li class="item-list menuparent">
+													<a href="javascript:void(0)">Reports & Publications</a>
+													<ul class="sub-menu">
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/reports-publications">Reports</a>
+														</li>
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/publications">Publications</a>
+														</li>
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/publications">Publications</a>
+														</li>
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/case_clearance_rate">Case Clearance Rate</a>
+														</li>
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/ecommittee_newsletter">Newsletter e-Committee</a>
+														</li>
+													</ul>
+												</li>
+
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/nominated-counsels/current">Nominated Counsel</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/senior-advocate-designation">Senior Advocate Designation</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item menuparent">
+											<a href="javascript:void(0)">e-Services</a>
+											<ul class="sub-menu">
+												<li class="item-list">
+													<a href="https://dhcefiling.nic.in/eFiling/">e-Filing</a>
+												</li>
+												<li class="item-list">
+													<a href="https://dhccaseinfo.nic.in/inspection/">e-Inspection</a>
+												</li>
+												<li class="item-list">
+													<a href="https://dhcrti.nic.in/RTI/index.action">e-RTI</a>
+												</li>
+												<li class="item-list">
+													<a href="https://dhccaseinfo.nic.in/ecopy/">e-True Copy</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/app/advocate-login">Advocate e-Diary</a>
+												</li>
+												<li class="item-list">
+													<!--<a href="https://delhihighcourt.nic.in/app/gatepass/register">e-Visitor Pass</a>-->
+								                  <a href="https://www.evisitordhc.gov.in/evisitordhcweb/">e-Visitor Pass</a>
+												</li>
+												<li class="item-list">
+													<a href="https://edhcr.nic.in/">e-DHCR</a>
+												</li>
+												<li class="item-list">
+													<a href="http://35.207.227.0/index.html">e-Museum</a>
+												</li>
+												<li class="item-list">
+													<a href="https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=4769239">Registration for Creche Facility</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item menuparent">
+											<a href="javascript:void(0)">Public Notices</a>
+											<ul class="sub-menu">
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/public-notice">General Notices</a>
+												</li>
+												<li class="item-list menuparent">
+													<a href="javascript:void(0)">Recruitment</a>
+													<ul class="sub-menu">
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/job-openings">Job Openings</a>
+														</li>
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/recruitment-results-current">Recruitment Results</a>
+														</li>
+														<li class="item-list">
+															<a href="https://delhihighcourt.nic.in/web/previous-year-question-papers">Previous Years Question
+																Papers</a>
+														</li>
+													</ul>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/tenders">Tenders</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/online-forms-downloadable-forms">Forms & Performas</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/company_claim/current">Company Claims & Sales Notices</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/citizen-charter">Citizen Charter</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/form/feedback">Give Your feedback</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item menuparent">
+											<a href="javascript:void(0)">Rules & Guidelines</a>
+											<ul class="sub-menu">
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/e-filing">e-Filing Rules</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/vc-rules">VC Rules</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/live-streaming-rules">Live Streaming Rules</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/notifications-practice-directions">Notifications & Practice Directions</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/court-rules">Court Rules</a>
+												</li>
+												<li class="item-list">
+													<a href="https://delhihighcourt.nic.in/web/rti-disclosure-rules">RTI Disclosure & Rules</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item">
+											<a href="javascript:void(0)" id="search-icon">
+												<i class="fa fa-search" aria-hidden="true" id="search-icon-img"></i>
+											</a>
+											<div id="search-box" class="search-box">
+												<input type="text" placeholder="Search...">
+												<button type="button" class="yellow-btn">Search</button>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Logo Section Header End -->
+	</header>
+
+    <div class="breadcrum-area">
+    <div class="breadcrumb-title-sec">
+        <div class="breadcrumb-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+                        <div class="breadcrumb-body-inner">
+                            <div class="region region-breadcrumb">
+                                <div id="block-delhihighcourt-breadcrumbs"
+                                    class="block block-system block-system-breadcrumb-block">
+                                    <nav aria-label="breadcrumb" class="bradurcum_custom">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a href="/">Home</a>
+                                            </li>
+                                            <li class="breadcrumb-item inactive">
+                                            <a href="#">CASE STATUS</a>
+                                            </li>
+                                            <li class="breadcrumb-item inactive">
+                                                <a href="#">CASE WISE</a>
+                                            </li>
+                                        </ol>
+                                    </nav>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-2 col-lg-2">
+                        <a href="javascript:void(0);" onclick="history.back();" class="btn quick-btn">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="tabs-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="multistep_content">
+
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="menu1">
+
+
+                            <h5 id="pet_name"></h5>
+                            <div class="table-responsive mt-4">
+                                <table class="table table-hover table-bordered text-center" id="caseTable"
+                                    style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>S.No.</th>
+                                            <th>Case No/Order Link.</th>
+                                            <th>Date of Order</th>
+                                            <th>Corrigendum Link/Corr. Date</th>
+                                            <th>HINDI ORDER</th>
+                                        </tr>
+
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+
+                                <div class="disclaimer">
+                                    <span style="text-align: justify;"><b class="text-primary"> Disclaimer :</b> The
+                                        content of this site is only for information purpose. Users are advised not to
+                                        depend on the information and use it for official purpose. Neither the High
+                                        Court of Delhi nor the National Informatics Centre , Ministry of Information
+                                        Technology, Government of India is responsible for any damages arising in
+                                        contract from the use of the content of this site.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+		<!-- Important Links Section Start -->
+		<div class="important-links-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 important-links">
+						<ul>
+							<li>
+								<!--<a href="https://delhihighcourt.nic.in/app/gatepass/register">e-Visitor Pass</a>-->
+								<a href="https://www.evisitordhc.gov.in/evisitordhcweb/">e-Visitor Pass</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/web/e-library">e-Library</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/web/accessibility-services">Accessibility Services</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/web/e-seva-kendra">e-Sewa Kendra & Accessiblity Helpline</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 important-links">
+						<ul>
+							<li>
+								<a href="https://delhihighcourt.nic.in/app/judgments-hindi">निर्णय हिंदी</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/web/online-forms-downloadable-forms">Forms & Performas</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/web/summary-of-mps-mlas-pending-cases">Monthly Report on MPs/MLAs Cases in District Court</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/web">Humour in Court</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 important-links">
+						<ul>
+							<li>
+								<a href="https://api.whatsapp.com/send/?phone=9112114450&text=Hi&type=phone_number&app_absent=0"><img src="https://delhihighcourt.nic.in/app/public/ois/images/whatsapp.png"> WhatsApp Services</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/web/telephone_directory">Telephone Directory</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/web/live-streaming">Live Streaming</a>
+							</li>
+							<li>
+								<a href="https://delhihighcourt.nic.in/app/harassment">Sexual Harassment Complaints</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-12 col-sm-12 col-md-6 col-lg-3 footer-logo">
+						<a class="logo-align footer_logo" href="#">
+							<div class="brand-img">
+								<img src="https://delhihighcourt.nic.in/app/public/ois/images/logo-footer.png"  alt="emblem">
+							</div>
+							<div class="brand-text">
+								<h4>High Court of Delhi</h4>
+							</div>
+						</a>
+						<div class="download-app-from">
+							<p>Download App From</p>
+							<ul>
+								<li>
+									<a href="#"><img src="https://delhihighcourt.nic.in/app/public/ois/images/aps.png"></a'>
+								</li>
+								<li>
+									<a href="#"><img src="https://delhihighcourt.nic.in/app/public/ois/images/iso.png"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Important Links Section End -->
+		<!-- Footer Top Section Start -->
+		<div class="footer-top-sec">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-9 col-lg-9 copyright-sec">
+						<div class="footer-nav-sec">
+							<ul>
+								<li>
+									<a href="https://delhihighcourt.nic.in/web/contact-us">Contact us</a>
+								</li>
+								<li>
+									<a href="https://delhihighcourt.nic.in/web/form/feedback">Feedback</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 visitor-sec">
+						<div class="social-media">
+							<p>Follow Us :</p>
+							<ul>
+								<li>
+									<a href="https://www.youtube.com/@delhihighcourt-official4624"><img src="https://delhihighcourt.nic.in/app/public/ois/images/youtube.png"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+						<hr>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-sm-12 col-md-9 col-lg-9 copyright-sec">
+						<div class="footer-nav-sec">
+							<ul>
+								
+								<li>
+									<a href="https://delhihighcourt.nic.in/web/privacy-policy">Privacy Policy</a>
+								</li>
+								<li>
+									<a href="https://delhihighcourt.nic.in/web/copyright-policy">Copyright Policy</a>
+								</li>
+								<li>
+									<a href="https://delhihighcourt.nic.in/web/hyperlinking-policy">Hyperlinking and Framing Policy</a>
+								</li>
+								<li>
+									<a href="https://delhihighcourt.nic.in/web/acessibility-statement">Accessibility Statement</a>
+								</li>
+								<li>
+									<a href="https://delhihighcourt.nic.in/web/help">Help</a>
+								</li>
+							</ul>
+							<p>Copyright © 2024 Content Owned by High Court of Delhi. All Rights Reserved.</p>
+						</div>
+					</div>
+					<div class="col-12 col-sm-12 col-md-3 col-lg-3 visitor-sec">
+						<p>Visitors: 207611265</p>
+						<p>Page last updated on: 26-03-2025</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Footer Top Section End -->
+	</footer>
+
+	<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+
+	<!--<script src="https://delhihighcourt.nic.in/app/public/ois/js/jquery-3.3.1.min.js"></script>-->
+	<script src="https://delhihighcourt.nic.in/app/public/ois/js/jquery-3.7.1.min.js"></script>
+	<script src="https://delhihighcourt.nic.in/app/public/ois/js/bootstrap.bundle.min.js"></script>
+	<script src="https://delhihighcourt.nic.in/app/public/ois/js/jquery.easy-ticker.min.js"></script>
+	<script src="https://delhihighcourt.nic.in/app/public/ois/js/wow.min.js"></script>
+	<script src="https://delhihighcourt.nic.in/app/public/ois/js/owl.carousel.js"></script>
+	<script src="https://delhihighcourt.nic.in/app/public/ois/js/custom.js"></script>
+
+
+
+
+    <script src="https://delhihighcourt.nic.in/app/public/backend/js/select2.min.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/backend/js/sweetalert.js"></script>
+	<script src="https://delhihighcourt.nic.in/app/public/ois/js/jquery-3.7.1.min.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/bootstrap-5.3.3.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/sha.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/jquery-ui.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/sweetalert.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/backend/js/jquery.validate.min.js"></script>
+
+    <!-----------------------------DataTable Scripts---------------------->
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/dataTables.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/dataTables.buttons.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/buttons.dataTables.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/jszip.min.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/pdfmake.min.js"></script>
+    <script src="https://delhihighcourt.nic.in/app/public/ois/js/vfs_fonts.js"></script>
+	<script>
+		/* preloader */
+		setTimeout(function () {
+			$('body')
+				.removeClass('loading')
+				.addClass('loaded');
+		}, 2000);
+		/* preloader */
+	</script>
+	  <script type="text/javascript">
+     /*   $(document).ready(function(){
+            $("#from_date").datepicker({
+    			dateFormat: 'dd-mm-yy',
+	            changeMonth: true,
+	            changeYear: true,
+	            yearRange: "-50:-0"
+			});
+            $("#to_date").datepicker({
+    			dateFormat: 'dd-mm-yy',
+	            changeMonth: true,
+	            changeYear: true,
+	            yearRange: "-50:-0"
+			});
+        });*/
+         $(document).ready(function(){
+        // Initialize the from_date datepicker
+        $("#from_date").datepicker({
+            dateFormat: 'dd-mm-yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-50:-0",
+            onSelect: function(selectedDate) {
+                var selectedDateObj = $(this).datepicker('getDate');
+                
+                // Set the minimum date for to_date to be the selected from_date
+                $("#to_date").datepicker("option", "minDate", selectedDateObj);
+            }
+        });
+
+        // Initialize the to_date datepicker
+        $("#to_date").datepicker({
+            dateFormat: 'dd-mm-yy',
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-50:-0",
+            minDate: 0,  // Disable past dates (before today) by default
+            beforeShowDay: function(date) {
+                // Get the from_date as selected date
+                var fromDate = $("#from_date").datepicker("getDate");
+                
+                // If no from_date is selected, disable all dates before today
+                if (!fromDate) {
+                    var today = new Date();
+                    if (date < today) {
+                        return [false]; // Disable the date
+                    }
+                } else {
+                    // Compare and disable dates before the from_date
+                    if (date < fromDate) {
+                        return [false]; // Disable the date
+                    }
+                }
+                
+                // Allow selecting the date if it's not before from_date
+                return [true]; // Enable the date
+            }
+        });
+    });
+    </script>	
+	 <script>
+        $(document).ready(function()
+        {
+            $( document ).ajaxStart(function()
+            {
+                $('#whole_page_loader').show();
+            });
+
+            $(document).ajaxError(function()
+            {
+                $('#whole_page_loader').hide();
+                //alert("Something went wrong!");
+            });
+
+            $(document).ajaxSuccess(function()
+            {
+                $('#whole_page_loader').hide();
+            });
+
+            // $('.select2').select2();
+        });
+        document.onreadystatechange = function ()
+        {
+            var state = document.readyState
+            if (state == 'interactive')
+            {
+                $('#whole_page_loader').show();
+            } 
+            else if (state == 'complete')
+            {
+                setTimeout(function(){
+                    $('#whole_page_loader').hide();
+                },1000);
+            }
+        }
+    </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Show loader on page load
+    document.getElementById("whole_page_loader").style.display = "block";
+});
+
+window.onload = function() {
+    // Hide loader once page is fully loaded
+    document.getElementById("whole_page_loader").style.display = "none";
+};
+</script>
+
+   
+        <script type="text/javascript">
+$(document).ready(function() {
+    var table = $('#caseTable').DataTable({
+        processing: true,
+        serverSide: true,
+        destroy: true,
+        ajax: {
+            url: 'https://delhihighcourt.nic.in/app/case-type-status-details/eyJpdiI6IkpXSWZlVkdCcE5qQlBoY2lOWHlmWUE9PSIsInZhbHVlIjoiK1ZtdTA3RE5TaUtrVjhUSVNvRWM3UT09IiwibWFjIjoiNWFiNjRjYmRlZDdiNGUxOGViOTUzZTFlOTYzMTJlZDFmYTdkMzc5M2IzMzhlYmFlNDliZWQwMmQ5ZTg4ZGU5MSIsInRhZyI6IiJ9/eyJpdiI6Ik84SFBNZXV6dVZwTEZoNlZ6Um9Dcnc9PSIsInZhbHVlIjoiU2l5S1d0TzVuVVFuTzc4N0kzaE1SUT09IiwibWFjIjoiOGI2YWI1YTY5M2MxN2RlMDMyYmQ2ZTU2MGU1OTZjNDYzMGFhZTVmZWM5OWM4MmEzNjBiZjFmNmI1M2MxNmZkZCIsInRhZyI6IiJ9/eyJpdiI6ImhtMElxOWNHbS9SRFNabWFqRndRSmc9PSIsInZhbHVlIjoieUxUbE03TGZ5RWpBU1prREttOFFuQT09IiwibWFjIjoiNGE2MTgzZWQzZTNlYzMwMzUyMjA5ZjVlZTNhYTZmMjBhODFhMDQxMThmN2FkMTJmYzdiNTIzNTdlNjgyNjk2MiIsInRhZyI6IiJ9',
+            data: function(d) {
+                d.case_type = $('#case_type').val();
+                //alert($('#case_type').val());
+                d.case_number = $('#case_number').val();
+                d.year = $('#year').val();
+            }
+        },
+        columns: [{
+                data: 'DT_RowIndex',
+                name: 'DT_RowIndex',
+                orderable: false
+            },
+            {
+                data: 'case_no_order_link',
+                name: 'case_no_order_link',
+                orderable: true
+            },
+            {
+                name: 'order_date.timestamp',
+                data: {
+                    _: 'order_date.display',
+                    sort: 'order_date.timestamp'
+                },
+                orderable: true
+            },
+            {
+                data: 'corrigendum',
+                name: 'corrigendum',
+                orderable: true
+            },
+            {
+                data: 'hindi_order',
+                name: 'hindi_order',
+                orderable: true
+            },
+        ],
+        aLengthMenu: [
+            [50, 100, 200, -1],
+            [50, 100, 200, "All"]
+        ],
+    });
+
+    table.draw();
+});
+</script>
+</body>
+
+</html>

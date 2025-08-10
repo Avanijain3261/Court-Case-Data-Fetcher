@@ -1,0 +1,218 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  flex-shrink: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #1c1c1c, #3a3a3a);
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.header-content h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  color: #ffcc70;
+}
+
+.header-content p {
+  font-size: 1.2rem;
+  color: #f1f1f1;
+}
+
+/* Main Layout - Stack vertically */
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Form Card */
+.form-card {
+  background: rgba(30, 30, 30, 0.85);
+  padding: 1.8rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: #ffcc70;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+.form-actions {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.form-actions button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff8c00, #ff4500);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.form-actions button:hover {
+  background: linear-gradient(45deg, #ff4500, #ff8c00);
+  transform: scale(1.05);
+}
+
+/* Results Container */
+.results-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.result-card {
+  background: rgba(30, 30, 30, 0.85);
+  padding: 1.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.3rem;
+  color: #ffd700;
+}
+
+/* Links - High Contrast */
+a {
+  color: #00ffff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #1affff;
+}
+
+/* Orders Table */
+.orders-section {
+  margin-top: 1rem;
+}
+
+.orders-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.orders-header, .order-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.8rem;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.download-button {
+  padding: 0.4rem 0.8rem;
+  background: linear-gradient(45deg, #32cd32, #228b22);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.download-button:hover {
+  background: linear-gradient(45deg, #228b22, #32cd32);
+  transform: scale(1.05);
+}
+
+/* Error Box */
+.error-box {
+  background: rgba(255, 77, 77, 0.15);
+  border: 1px solid rgba(255, 77, 77, 0.6);
+  padding: 1rem;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Spinner */
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #00ffff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  .form-actions button {
+    width: 100%;
+  }
+}
